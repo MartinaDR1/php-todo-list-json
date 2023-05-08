@@ -54,8 +54,22 @@ createApp({
             })
         },
         doneItem(index){
-            console.log(index)
-            this.tasks[index].done = !this.tasks[index].done
+            //console.log(index)
+            //this.tasks[index].done = !this.tasks[index].done
+
+            const data ={
+                index
+            }
+            axios.post ('doneTask.php', data, 
+            {
+                headers : {'Content-Type': 'multipart/form-data'}
+            }) .then(response =>{
+                console.log(response);
+                this.tasks= response.data
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
         }
     }
 }).mount('#app')
