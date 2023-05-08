@@ -28,7 +28,7 @@
 
                         <div class="btn">
                             <button class="btn btn-outline-success my-2 mx-2" @click="doneItem(index)"><i class="fa-solid fa-check fa-2xs"></i></button>
-                            <button class="btn btn-outline-danger my-2" @click="deleteItem()"><i class="fa-solid fa-xmark fa-2xs"></i></button>
+                            <button class="btn btn-outline-danger my-2" @click="deleteItem(index)"><i class="fa-solid fa-xmark fa-2xs"></i></button>
                         </div>
                     </li>
                 </ul>

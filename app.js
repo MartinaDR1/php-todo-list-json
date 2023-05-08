@@ -36,8 +36,8 @@ createApp({
             })
 
         },
-        deleteItem(){
-            this.tasks.shift()
+        deleteItem(i){
+            this.tasks.splice(i, 1);
         },
         doneItem(i){
             console.log(i)
