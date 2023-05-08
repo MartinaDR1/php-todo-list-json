@@ -14,8 +14,17 @@
     <title>PHP ToDo List JSON</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center my-3">Todo List</h1>
+    <div id="app">
+        <div class="container">
+            <h1 class="text-center my-3">Todo List</h1>
+    
+            <div class="my_container">
+                <ul class="text-black list-unstyled fs-2 p-2">
+                    <li v-for="task in tasks" class="border-bottom"> {{task}}</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
 
@@ -24,7 +33,7 @@
     <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
 
     <!-- Vue -->
-    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- My js -->
     <script src='./app.js'></script>

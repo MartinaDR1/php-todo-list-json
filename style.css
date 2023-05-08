@@ -7,3 +7,10 @@ h1{
     font-size: 6rem;
     font-weight: lighter;
 }
+
+.my_container{
+    width: 40%;
+    margin: auto;
+    background-color: rgb(201, 174, 140);
+
+}
