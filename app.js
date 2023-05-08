@@ -35,6 +35,9 @@ createApp({
                 console.error(error.message);
             })
 
-        }
+        },
+        deleteItem(){
+            this.tasks.shift()
+        },
     }
 }).mount('#app')

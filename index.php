@@ -8,6 +8,9 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- My css -->
     <link rel="stylesheet" href="style.css">
 
@@ -20,13 +23,17 @@
     
             <div class="my_container">
                 <ul class="text-black list-unstyled fs-2 p-2">
-                    <li v-for="task in tasks" class="border-bottom"> {{task}}</li>
+                    <li v-for="task in tasks" class="border-bottom d-flex justify-content-between"> 
+                        {{task}}
+
+                        <button class="btn btn-outline-danger my-2" @click="deleteItem()"><i class="fa-solid fa-xmark fa-2xs"></i></button>
+                    </li>
                 </ul>
 
             </div>
             <div class="my_container new_task p-2">
                 <input type="text" v-model="new_task" @keyup.enter="add_task" placeholder="Inserisci un nuovo elemento..." >
-                <button type="submit" class="btn btn-outline-light mx-5">Inserisci</button>
+                <button type="submit" @keyup.enter="add_task" class="btn btn-outline-light mx-5">Inserisci</button>
             </div>
         </div>
 
