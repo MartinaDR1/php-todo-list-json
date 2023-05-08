@@ -5,7 +5,7 @@ createApp({
         return{
             tasks: null,
             api: 'getTask.php',
-            new_task: ''
+            new_task: '',
         }
     },
     mounted(){
@@ -39,5 +39,9 @@ createApp({
         deleteItem(){
             this.tasks.shift()
         },
+        doneItem(i){
+            console.log(i)
+            this.tasks[i].done = !this.tasks[i].done
+        }
     }
 }).mount('#app')

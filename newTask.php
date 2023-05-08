@@ -8,7 +8,10 @@ if (isset($_POST['new_task'])) {
 
     $tasks_array = json_decode ($tasks_string, true);
 
-    array_unshift($tasks_array, $task);
+    array_unshift($tasks_array, [
+        'task' => $task,
+        'done' => false
+    ]);
 
     $new_tasks_json= json_encode($tasks_array);
 

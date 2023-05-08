@@ -23,10 +23,13 @@
     
             <div class="my_container">
                 <ul class="text-black list-unstyled fs-2 p-2">
-                    <li v-for="task in tasks" class="border-bottom d-flex justify-content-between"> 
-                        {{task}}
+                    <li v-for="(task, index) in tasks" class="border-bottom d-flex justify-content-between"> 
+                        <span  :class="task.done ? 'done' : ''" @click="doneItem(index)">{{task.task}}</span>
 
-                        <button class="btn btn-outline-danger my-2" @click="deleteItem()"><i class="fa-solid fa-xmark fa-2xs"></i></button>
+                        <div class="btn">
+                            <button class="btn btn-outline-success my-2 mx-2" @click="doneItem(index)"><i class="fa-solid fa-check fa-2xs"></i></button>
+                            <button class="btn btn-outline-danger my-2" @click="deleteItem()"><i class="fa-solid fa-xmark fa-2xs"></i></button>
+                        </div>
                     </li>
                 </ul>
 
