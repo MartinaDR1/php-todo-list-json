@@ -14,3 +14,7 @@ h1{
     background-color: rgb(201, 174, 140);
 
 }
+
+input{
+    width: 250px;
+}
