@@ -17,7 +17,7 @@ if (isset($_POST['new_task'])) {
 
     file_put_contents('tasks.json', $new_tasks_json);
 
-    header('Content-Type : application/json');
+    header('Content-Type: application/json');
 
     echo $new_tasks_json;
 }

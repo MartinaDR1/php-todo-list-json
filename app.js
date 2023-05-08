@@ -26,7 +26,7 @@ createApp({
             }
             axios.post ('newTask.php', data, 
             {
-                headers : {'Content-Type' : 'multipart/form-data'}
+                headers : {'Content-Type': 'multipart/form-data'}
             }) .then(response =>{
                 console.log(response);
                 this.tasks= response.data
@@ -36,12 +36,26 @@ createApp({
             })
 
         },
-        deleteItem(i){
-            this.tasks.splice(i, 1);
+        deleteItem(index){
+            //this.tasks.splice(i, 1);
+
+            const data ={
+                index
+            }
+            axios.post ('deleteTask.php', data, 
+            {
+                headers : {'Content-Type': 'multipart/form-data'}
+            }) .then(response =>{
+                console.log(response);
+                this.tasks= response.data
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
         },
-        doneItem(i){
-            console.log(i)
-            this.tasks[i].done = !this.tasks[i].done
+        doneItem(index){
+            console.log(index)
+            this.tasks[index].done = !this.tasks[index].done
         }
     }
 }).mount('#app')
