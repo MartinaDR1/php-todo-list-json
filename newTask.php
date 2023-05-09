@@ -1,7 +1,7 @@
 <?php
 //var_dump($_POST);
 
-if (isset($_POST['new_task'])) {
+if (isset($_POST ['new_task'])) {
     $task = $_POST['new_task'];
 
     $tasks_string = file_get_contents('tasks.json');
@@ -17,7 +17,9 @@ if (isset($_POST['new_task'])) {
 
     file_put_contents('tasks.json', $new_tasks_json);
 
-    header('Content-Type: application/json');
+    include './helpers.php';
+
+    setHeaders() ;
 
     echo $new_tasks_json;
 }

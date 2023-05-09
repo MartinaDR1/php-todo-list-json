@@ -11,6 +11,8 @@ $new_tasks_json = json_encode($tasks_array);
 
 file_put_contents('tasks.json', $new_tasks_json);
 
-header('Content-Type: application/json');
+include './helpers.php';
+
+setHeaders() ;
 
 echo $new_tasks_json;

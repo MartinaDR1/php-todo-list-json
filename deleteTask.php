@@ -1,6 +1,4 @@
 <?php
-
-
 if(isset($_POST["index"])) {
 
     $index = intval($_POST["index"]);
@@ -15,7 +13,9 @@ if(isset($_POST["index"])) {
 
     file_put_contents('tasks.json', $new_tasks_json);
 
-    header('Content-Type: application/json');
+    include './helpers.php';
+
+    setHeaders() ;
 
     echo $new_tasks_json;
 }
