@@ -27,14 +27,14 @@ createApp({
             axios.post ('newTask.php', data, 
             {
                 headers : {'Content-Type': 'multipart/form-data'}
-            }) .then(response =>{
+            }) .then(response => {
                 console.log(response);
-                this.tasks= response.data
+                this.tasks = response.data
             })
             .catch(error => {
                 console.error(error.message);
             })
-
+            this.new_task = "";
         },
         deleteItem(index){
             //this.tasks.splice(i, 1);

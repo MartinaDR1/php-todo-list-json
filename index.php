@@ -35,8 +35,8 @@
 
             </div>
             <div class="my_container new_task p-2">
-                <input type="text" v-model="new_task" @keyup.enter="add_task" placeholder="Inserisci un nuovo elemento..." >
-                <button type="submit" @keyup.enter="add_task" class="btn btn-outline-light mx-5">Inserisci</button>
+                <input type="text" v-model="new_task" @keyup.enter="add_task()" placeholder="Inserisci un nuovo elemento..." >
+                <button type="submit" @click="add_task()" class="btn btn-outline-light mx-5">Inserisci</button>
             </div>
         </div>
 
